@@ -1,0 +1,160 @@
+<!--create an animated web page using a combination of HTML, CSS and JavaScript. This web page will provide a canvas (for the animation) and an interface to control the animation.-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ball Animation</title>
+		<style>
+			<!-- Place any CSS code here-->
+		</style>
+	</head>
+	<body>
+		<h2>Project 5 animated webpage</h2>
+		
+		<!-- CAUTION - Avoid changing the values and style of the HTML tags below - CAUTION -->
+
+		<div style="display: inline-block; vertical-align: top; width: 1000px; height: 600px;">
+			<canvas id="container" height=600 width=1000 style="border: 1px solid;"></canvas>
+		</div>
+		
+
+		<div style="display: inline-block; vertical-align: top; width: 325px; height: 600px; border: 1px solid;">
+			
+			<div style="margin: 0px 0px 0px 0px;">
+				<input type="radio" id="addBall" name="ball" onclick= "updateForm(this)"><label for="add_ball">Add a Ball</label><br>
+				<input type="radio" id="updateBall" name="ball" onclick= "updateForm(this)"><label for="updateBall">Update The Ball</label><br>
+			</div> 
+
+			<div style="margin: 10px 0px 0px 0px;">
+				<input type="text" id="Name" name="ball"><label for="fieldName">Name</label><br>
+				<input type="number" id="Radius" name="ball" min="10 " max="50"><label for="radius">Radius</label><br>
+				<input type="number" id="Speed" name="ball" min="0" max="25"><label for="radius">Speed</label><br>
+			</div>
+			
+			<div style="margin: 10px 0px 0px 0px;">
+				<button onclick="addBall()">Add Ball</button>				 
+                <button onclick="updateBall()">Update Ball</button>
+			</div>
+
+			<div style="margin: 10px 0px 0px 0px;">
+				<button onclick="stopAnimation()">Stop Animation</button>
+			</div>
+
+		</div>
+
+		<script>
+			var Balls = [];
+			//The Ball class allows you to add multiple balls to the canvas
+			class Ball {
+				color = 0; //The current color based on the ball's direction 
+				movingDown = true; // Is ball moving towards the bottom of canvas 
+				movingRight = true; // Is ball moving towards the right of canvas 
+				name = ""; //The name assigned to the ball
+				radius = 0; //The radius assigned to the ball 
+				speed = 0; //The speed assigned to the ball 
+				xPos = 0; // The current horizontal position of the ball 
+				yPos = 0; //The current vertical position of the ball 
+				
+				//Create an instance of the Ball class 
+				constructor(name, radius, speed) {
+					this.name=name;
+					this.radius=radius;
+					this.speed=speed;
+				}
+				
+
+				//Getters and setters 
+				get name() { }
+				
+				get radius() { }
+				
+				get speed() { }
+				
+				set name(name) { }
+								
+				set radius(radius) { }
+				
+				set speed(speed) { }
+				
+				 //Determine if the ball's direction needs to change -->
+				 //This should prevent the ball from traveling beyond the canvas borders -->
+				checkForWallCollision() {
+					
+				}
+				
+				//Draw the ball at its current position on the canvas
+				draw(canvas) {
+					
+				}
+				
+				//Choose the ball's color based on its direction of travel
+				updateColor() {
+					
+				}
+				
+				//Update the ball's position based on its direction and speed
+				updatePosition() {
+					
+				}
+			}
+
+			const BALLS = []; //Array to hold the balls added to the canvas
+			const COLORS = ["red", "green", "blue", "yellow"];
+			const MAX_WIDTH = 1000; //Width of the canvas defined in the HTML above
+			const MAX_HEIGHT = 600; //Height of the canvas defined in the HTML above
+			//Creates timer to automate the animation 
+			//The timer repeats every 10 milliseconds
+			const TIMER = setInterval(updateCanvas, 10, document.getElementById("container").getContext("2d"));
+			
+			updateAddBallForm(); //Prefills data in the Add a Ball fields
+			
+			//Creates a new ball and adds it to the BALLS array
+			function addBall() {
+				//console.log("Add Ball");
+				var name = document.getElementById("Name").value;
+				var radius = document.getElementById("Radius").value;
+				var speed = document.getElementById("Speed").value;
+				//console.log("Add Ball * name=" + name);
+				//console.log("Add Ball * radius=" + radius);
+				//console.log("Add Ball * speed=" + speed);
+				var ball = new Ball(name,radius,speed);
+				Balls.push(ball);
+				console.log("Add Ball * Balls=" + JSON.stringify(Balls));
+			}
+
+			//Turns the timer off to stop the animation
+			function stopAnimation() {
+				clearInterval(TIMER);
+			}
+			
+			//Prefills data in the Add a Ball fields
+			function updateAddBallForm() {
+				
+			}
+
+			//Updates the selected ball with the data in the Update a Ball fields
+			function updateBall() {
+				
+			}
+			
+			//Draws the next frame of animation on the canvas
+			function updateCanvas(canvas) {
+				
+			}
+
+			//Display the fields of the the selected form: Add a Ball or Update a Ball			
+			function updateForm(control) {
+				
+			}
+			
+			//Display the data in the Update a Ball fields when a ball is selected			
+			function updateSelection() {
+				
+			}
+			
+			//Update the Update a Ball drop-down list when a ball is added
+			function updateSelectList() {
+				
+			}
+		</script>
+	</body>
+</html>
